@@ -9,10 +9,21 @@ app = Flask(__name__)
 def renderMain():
     return render_template('home.html')
 
-@app.route('/A')
-def A():
-    
+@app.route('/submit')
+def submit():
+    session["answer1"] = request.form["answer"]
+    return render_template('page1.html')
 
+
+@app.route('/check')
+def check():
+    counter = 0
+    if session["answer1] = A:
+        counter = counter + 1
+               
+               
+    
+               
 
 if __name__=="__main__":
     app.run(debug=False)
