@@ -18,7 +18,7 @@ def submit():
 @app.route('/check')
 def check():
     counter = 0
-    if session["answer1] = A:
+    if session["answer1] == "A":
         counter = counter + 1
                
                
