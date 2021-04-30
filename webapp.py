@@ -9,7 +9,7 @@ app = Flask(__name__)
 def renderMain():
     return render_template('home.html')
 
-@app.route('/submit')
+@app.route('/submit',methods=['POST'])
 def submit():
     session["answer1"] = request.form["answer"]
     return render_template('page1.html')
