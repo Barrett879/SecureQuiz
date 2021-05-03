@@ -35,8 +35,11 @@ def check():
         counter = counter + 1
     if session["answer3"] == "C":
         coutner = counter + 1
-               
-         
+
+@app.route('/submit3',methods=['POST'])
+def submit3():
+    return render_template('page4.html')
+
 
 if __name__=="__main__":
     app.run(debug=False)
