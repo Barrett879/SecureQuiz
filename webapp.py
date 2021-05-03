@@ -39,7 +39,7 @@ def check():
 
 @app.route('/submit3',methods=['POST'])
 def submit3():
-    return render_template('page4.html')
+    return render_template('page4.html', score = 3)
 
 
 if __name__=="__main__":
