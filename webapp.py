@@ -16,13 +16,13 @@ def submit():
     session["answer1"] = request.form["answer"]
     return render_template('page1.html')
 
-@app.route('/submit',methods=['POST'])
-def submit():
+@app.route('/submit1',methods=['POST'])
+def submit1():
     session["answer2"] = request.form["answer"]
     return render_template('page2.html')
 
-@app.route('/submit',methods=['POST'])
-def submit():
+@app.route('/submit2',methods=['POST'])
+def submit2():
     session["answer3"] = request.form["answer"]
     return render_template('page3.html')
 
