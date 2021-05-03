@@ -34,7 +34,8 @@ def check():
     if session["answer2"] == "B":
         counter = counter + 1
     if session["answer3"] == "C":
-        coutner = counter + 1
+        counter = counter + 1
+    return counter
 
 @app.route('/submit3',methods=['POST'])
 def submit3():
