@@ -26,7 +26,7 @@ def submit2():
     session["answer3"] = request.form["answer2"]
     return render_template('page3.html')
 
-@app.route('/check')
+
 def check():
     counter = 0
     if session["answer1"] == "A":
@@ -39,7 +39,7 @@ def check():
 
 @app.route('/submit3',methods=['POST'])
 def submit3():
-    return render_template('page4.html', score = 3)
+    return render_template('page4.html', score = check())
 
 
 if __name__=="__main__":
