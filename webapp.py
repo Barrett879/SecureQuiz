@@ -38,6 +38,8 @@ def check():
         counter = counter + 1
     if session["answer3"] == "C":
         counter = counter + 1
+    if session["answer4"] == "D":
+        counter = counter + 1
     return counter
 
 @app.route('/submit3',methods=['POST'])
