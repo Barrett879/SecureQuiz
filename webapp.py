@@ -25,6 +25,9 @@ def submit1():
 def submit2():
     session["answer3"] = request.form["answer2"]
     return render_template('page3.html')
+@app.route('/restart')
+def restart():
+    return render_template('home.html')
 
 
 def check():
