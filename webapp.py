@@ -13,17 +13,17 @@ def renderMain():
 
 @app.route('/submit',methods=['POST'])
 def submit():
-    session["answer2"] = request.form["answer1"]
+    session["answer1"] = request.form["answer1"]
     return render_template('page1.html')
 
 @app.route('/submit1',methods=['POST'])
 def submit1():
-    session["answer3"] = request.form["answer2"]
+    session["answer2"] = request.form["answer2"]
     return render_template('page2.html')
 
 @app.route('/submit2',methods=['POST'])
 def submit2():
-    session["answer4"] = request.form["answer3"]
+    session["answer3"] = request.form["answer3"]
     return render_template('page3.html')
 @app.route('/restart')
 def restart():
@@ -44,6 +44,7 @@ def check():
 
 @app.route('/submit3',methods=['POST'])
 def submit3():
+    session["answer4"] = request.form["answer4"]
     return render_template('page4.html', score = check())
 
 
