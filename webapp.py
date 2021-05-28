@@ -30,6 +30,7 @@ def submit2():
     return render_template('page3.html')
 @app.route('/restart')
 def restart():
+    session.clear()
     return render_template('home.html')
 
 
