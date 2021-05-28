@@ -2,6 +2,7 @@ import os
 from flask import Flask, url_for, render_template, request
 from flask import redirect
 from flask import session
+import threading
 
 app = Flask(__name__)
 
@@ -9,6 +10,9 @@ app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
 def renderMain():
+def timer():
+    timer = threading.Timer(2.0, gfg)
+    timer.start()
     return render_template('home.html')
 
 @app.route('/submit',methods=['POST'])
@@ -45,7 +49,10 @@ def check():
 @app.route('/submit3',methods=['POST'])
 def submit3():
     session["answer4"] = request.form["answer4"]
+    timer.cancel()
+    return timer
     return render_template('page4.html', score = check())
+
 
 
 if __name__=="__main__":
