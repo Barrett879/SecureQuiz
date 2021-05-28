@@ -14,7 +14,7 @@ def renderMain():
     end = 0
     return render_template('first.html')
 
-@app.route(/submit10)
+@app.route('/submit10',methods=['POST'])
 def submit10():
     global start
     start = time.time()
