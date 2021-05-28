@@ -31,6 +31,8 @@ def submit2():
 @app.route('/restart')
 def restart():
     session.clear()
+    start = 0
+    end = 0
     return render_template('home.html')
 
 
