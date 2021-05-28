@@ -33,6 +33,7 @@ def restart():
     session.clear()
     start = 0
     end = 0
+    time = 0
     return render_template('home.html')
 
 
