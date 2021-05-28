@@ -9,7 +9,13 @@ app = Flask(__name__)
 app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
-def renderMain():
+def renderMain(): 
+    start = 0
+    end = 0
+    return render_template('first.html')
+
+@app.route(/submit10)
+def submit10():
     global start
     start = time.time()
     return render_template('home.html')
@@ -30,10 +36,7 @@ def submit2():
     return render_template('page3.html')
 @app.route('/restart')
 def restart():
-    session.clear()
-    start = 0
-    end = 0
-    return render_template('home.html')
+    return render_template('first.html')
 
 
 def check():
