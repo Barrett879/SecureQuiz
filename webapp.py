@@ -2,16 +2,28 @@ import os
 from flask import Flask, url_for, render_template, request
 from flask import redirect
 from flask import session
-import threading
+import time
 
 app = Flask(__name__)
 
 app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
-def timer():
-    timer = threading.Timer(2.0, timer)
-    timer.start()
+
+  
+# define the countdown func.
+def countdown(t):
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        t -= 1
+    print('Fire in the hole!!')
+# input time in seconds
+t = input("Enter the time in seconds: ") 
+# function call
+countdown(int(t))
 def renderMain():
     return render_template('home.html')
 
@@ -49,8 +61,6 @@ def check():
 @app.route('/submit3',methods=['POST'])
 def submit3():
     session["answer4"] = request.form["answer4"]
-    timer.cancel()
-    return timer
     return render_template('page4.html', score = check())
 
 
