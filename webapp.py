@@ -9,10 +9,10 @@ app = Flask(__name__)
 app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
-def renderMain():
 def timer():
     timer = threading.Timer(2.0, gfg)
     timer.start()
+def renderMain():
     return render_template('home.html')
 
 @app.route('/submit',methods=['POST'])
