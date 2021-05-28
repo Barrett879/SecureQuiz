@@ -10,7 +10,7 @@ app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
 def timer():
-    timer = threading.Timer(2.0, gfg)
+    timer = threading.Timer(2.0, timer)
     timer.start()
 def renderMain():
     return render_template('home.html')
