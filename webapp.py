@@ -9,22 +9,9 @@ app = Flask(__name__)
 app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
-
-  
-# define the countdown func.
-def countdown(t):
-    while t:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(mins, secs)
-        print(timer, end="\r")
-        time.sleep(1)
-        t -= 1
-    print('Fire in the hole!!')
-# input time in seconds
-t = input("Enter the time in seconds: ") 
-# function call
-countdown(int(t))
 def renderMain():
+    global start
+    start = time.time()
     return render_template('home.html')
 
 @app.route('/submit',methods=['POST'])
@@ -61,7 +48,9 @@ def check():
 @app.route('/submit3',methods=['POST'])
 def submit3():
     session["answer4"] = request.form["answer4"]
-    return render_template('page4.html', score = check())
+    end = time.time()
+    x = (end-start)
+    return render_template('page4.html', score = check(), time = int(x))
 
 
 
