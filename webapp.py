@@ -10,8 +10,8 @@ app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/')
 def renderMain(): 
-    session [start] = 0
-    session [end] = 0
+    session ['start'] = 0
+    session ['end'] = 0
     return render_template('first.html')
 
 @app.route('/submit10',methods=['POST'])
@@ -55,7 +55,7 @@ def check():
 def submit3():
     session["answer4"] = request.form["answer4"]
     session [end] = time.time()
-    x = (session[end]-session[start])
+    x = (session['end']-session['start'])
     return render_template('page4.html', score = check(), time = int(x))
 
 
