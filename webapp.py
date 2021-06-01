@@ -54,7 +54,7 @@ def check():
 @app.route('/submit3',methods=['POST'])
 def submit3():
     session["answer4"] = request.form["answer4"]
-    session [end] = time.time()
+    session ['end'] = time.time()
     x = (session['end']-session['start'])
     return render_template('page4.html', score = check(), time = int(x))
 
