@@ -55,6 +55,7 @@ def check():
 def submit3():
     session["answer4"] = request.form["answer4"]
     end = time.time()
+    start = 0
     x = (end-start)
     return render_template('page4.html', score = check(), time = int(x))
 
