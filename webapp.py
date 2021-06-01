@@ -16,8 +16,8 @@ def renderMain():
 
 @app.route('/submit10',methods=['POST'])
 def submit10():
-    global start
-    start = time.time()
+    session ['start']
+    session ['start'] = time.time()
     return render_template('home.html')
 
 @app.route('/submit',methods=['POST'])
